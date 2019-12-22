@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.0')
+    testImplementation('org.mockito:mockito-core:2.26.0')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
